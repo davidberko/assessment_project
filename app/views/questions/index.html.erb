@@ -11,6 +11,9 @@
       <%= radio_button("result", "answer", "0", { index: q.id })  %>
     </div>
   <% end %>
+  <div class="actions">
+    <%= link_to "Submit", assessment_index_path %>
+  </div>
 <% end %>
 
 
