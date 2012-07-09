@@ -6,5 +6,5 @@
   <p>
   <%= a.description %>
   </p>
-  <p><%= link_to "begin survey", new_assessment_path(a.id) %></p>
+  <p><%= link_to "begin survey", assessment_questions_path(a.id) %></p>
   <% end %>

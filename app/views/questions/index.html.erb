@@ -1,0 +1,16 @@
+
+<h1><%= "Questions for Brief Survey" %></h1>
+
+<%= form_tag('/assessment_questions') do |f| %>
+  <% @questions.each do |q| %>
+    <div>
+      <%= q.content %>
+      <%= label :result, :answer, "yes" %>
+      <%= radio_button("result", "answer", "1", { index: q.id })  %>
+      <%= label :result, :answer, "no" %>
+      <%= radio_button("result", "answer", "0", { index: q.id })  %>
+    </div>
+  <% end %>
+<% end %>
+
+
