@@ -1,19 +1,23 @@
 
 <h1><%= "Questions for Brief Survey" %></h1>
 
-<%= form_tag('/assessment_questions') do |f| %>
+<p>If you can answer yes to the follow questions, give yourself the points 
+  listed and then add them up at the end to get your assessment results</p>
+
+<%= form_tag('/results/submit_form/') do %>
   <% @questions.each do |q| %>
     <div>
       <%= q.content %>
-      <%= label :result, :answer, "yes" %>
-      <%= radio_button("result", "answer", "1", { index: q.id })  %>
-      <%= label :result, :answer, "no" %>
-      <%= radio_button("result", "answer", "0", { index: q.id })  %>
+      <%= label :results, :answer, "yes" %>
+      <%= radio_button("results", "answer", "1", { index: q.id })  %>
+      <%= label :results, :answer, "no" %>
+      <%= radio_button("results", "answer", "0", { index: q.id })  %>
     </div>
   <% end %>
   <div class="actions">
-    <%= link_to "Submit", assessment_index_path %>
+    <%= submit_tag "Submit" %>
   </div>
 <% end %>
+
 
 
